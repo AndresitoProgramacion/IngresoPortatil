@@ -38,14 +38,14 @@
                         <br>
                         <div class="form-outline mb-4">
                             <label class="form-label" for="form2Example11">Usuario</label>
-                          <input type="email" id="form2Example11" class="form-control"
+                          <input name="user" type="email" id="form2Example11" class="form-control"
                             placeholder="" />
 
                         </div>
 
                         <div class="form-outline mb-4">
                             <label class="form-label" for="form2Example22">Contraseña</label>
-                          <input type="password" id="form2Example22" class="form-control" />
+                          <input name="password" type="password" id="form2Example22" class="form-control" />
 
                         </div>
 
@@ -81,6 +81,9 @@
           </div>
         </div>
       </section>
+
+
+
 
 
 
