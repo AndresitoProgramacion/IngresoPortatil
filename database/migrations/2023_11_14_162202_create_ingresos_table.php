@@ -13,13 +13,13 @@ return new class extends Migration
     {
         Schema::create('ingresos', function (Blueprint $table) {
             $table->id('idIn');
-            $table->usignedBigInteger('idCel');
-            $table->usignedBigInteger('idApren');
-            $table->usignedBigInteger('idPor');
+            $table->unsignedBigInteger('idCel');
+            $table->unsignedBigInteger('idApren');
+            $table->unsignedBigInteger('idPor');
             $table->String('fechaE');
             $table->String('fechaS');
 
-            
+
             $table->foreign('idCel')->references('idCel')->on('celadores');
             $table->foreign('idApren')->references('idApren')->on('aprendices');
             $table->foreign('idPor')->references('idPor')->on('portatiles');

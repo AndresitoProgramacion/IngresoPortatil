@@ -13,8 +13,10 @@ return new class extends Migration
     {
         Schema::create('celadores', function (Blueprint $table) {
             $table->id('idCel');
-            $table->String('nombreC');
-            $table->String('ident');
+            $table->String('nombreCelador');
+            $table->String('identificacion');
+            $table->String('Usuario');
+            $table->String('Contraseña');
         });
     }
 
