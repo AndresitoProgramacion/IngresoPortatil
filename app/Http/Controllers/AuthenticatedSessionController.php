@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 
+use Illuminate\Auth\Events\Failed;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\Auth;
@@ -15,21 +16,19 @@ class AuthenticatedSessionController extends Controller
 
         $credentials = $request->validate([
             'Usuario' => ['required', 'string'],
-            'Contraseña' => ['required', 'string'],
+            'password' => ['required', 'string'],
         ]);
 
-        if (Auth::attempt(['Usuario' => $credentials['Usuario'], 'password' => $credentials['Contraseña']])) {
-            throw ValidationException::withMessages([
-                'Usuario' => __('auth.failed'),
-                'Contraseña' => __('auth.failed'),
-            ]);
+
+
+        if (Auth::attempt($credentials)){
+            $request->session()->regenerate();
+            return redirect()->route('welcome')->with('status', 'Sesión Iniciada Correctamente');
         }
-
-
-
-
-        $request->session()->regenerate();
-        return redirect()->route('welcome')->with('status', 'Sesión Iniciada Correctamente');
+        throw ValidationException::withMessages([
+            'Usuario' => __('Usuario no encontrado'),
+            'passsword' => __('auth.failed')
+        ]);
 
 
 

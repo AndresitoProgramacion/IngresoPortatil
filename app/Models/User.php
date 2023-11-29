@@ -16,21 +16,21 @@ class User extends Authenticatable
 
     protected $table = 'celadores';
     protected $username = 'Usuario';
-    protected $password = 'Contraseña';
     public $timestamps = false;
     /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
      */
-    protected $fillable = [
-        'nombreCelador',
-        'identificacion',
-        'Usuario',
-        'Contraseña',
-    ];
-
+    // protected $fillable = [
+    //     'nombreCelador',
+    //     'identificacion',
+    //     'Usuario',
+    //     'Contraseña',
+    // ];
     protected $primaryKey = 'idCel';
+
+
 
 
     /**

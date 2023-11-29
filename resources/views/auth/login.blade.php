@@ -30,6 +30,9 @@
                                             alt="logo">
                                         <h4 class="mt-1 mb-5 pb-1"> INGRESO DE COMPUTADORES</h4>
                                     </div>
+                                    @if (Auth::user())
+                                        {{ session('status') }}
+                                    @endif
 
 
                                     <form action="{{ route('login') }}" method="POST">
@@ -48,9 +51,9 @@
 
                                         <div class="form-outline mb-4">
                                             <label class="form-label" for="form2Example22">Contraseña</label>
-                                            <input name="Contraseña" type="password" id="form2Example22"
+                                            <input name="password" type="password" id="form2Example22"
                                                 class="form-control" />
-                                            @error('Contraseña')
+                                            @error('password')
                                                 <small class="text-danger">{{ $message }}</small>
                                             @enderror
                                         </div>

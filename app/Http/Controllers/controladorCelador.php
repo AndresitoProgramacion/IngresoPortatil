@@ -6,40 +6,40 @@ use Illuminate\Http\Request;
 
 class controladorCelador extends Controller
 {
-    
+
 }
 
-public function index()
-{
-    
-}
-
-public function create()
-{
-    
-}
-
-public function store(Request $request)
-{
-    
-}
-
-public function show(string $id)
+function index()
 {
 
 }
 
-public function edit(string $id)
+function create()
 {
 
 }
 
-public function update(Request $request, string $id)
+function store(Request $request)
 {
 
 }
 
-public function destroy(string $id)
+function show(string $id)
+{
+
+}
+
+function edit(string $id)
+{
+
+}
+
+function update(Request $request, string $id)
+{
+
+}
+
+function destroy(string $id)
 {
 
 }

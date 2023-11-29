@@ -16,6 +16,9 @@ class RegisteredUserController extends Controller
             'Usuario' => ['required','string','max:255','unique:celadores'],
             'Contraseña' => ['required','confirmed'],
         ]);
+
+        
+
         User::create([
             'nombreCelador' => $request->nombreCelador,
             'identificacion' => $request->identificacion,
